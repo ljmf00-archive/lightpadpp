@@ -36,7 +36,7 @@ void MainWindow::destroyNotepadTab(int index)
         ui->tabWidget->removeTab(index);
     }
 
-    if(index==0)
+    if(ui->tabWidget->count()==0)
     {
         createNewNotepadTab();
     }

@@ -55,9 +55,12 @@ void MainWindow::on_actionOpen_File_triggered()
     }
     QFile file(OpenFileName);
     if(!file.open(QIODevice::ReadOnly)) {
-        QMessageBox::information(0, "error", file.errorString());
+        QMessageBox::information(0, "Error", file.errorString());
     }
-    createNotepadTab(QFileInfo(OpenFileName).fileName());
+    else
+    {
+        createNotepadTab(QFileInfo(OpenFileName).fileName());
+    }
     QTextEdit* tempEditor = NULL;
     QWidget* tempWidget = ui->tabWidget->widget(ui->tabWidget->currentIndex());
     tempEditor = (QTextEdit*)tempWidget;
