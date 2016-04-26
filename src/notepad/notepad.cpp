@@ -3,10 +3,10 @@
 
 void MainWindow::createNotepadTab(QString NotepadTabName)
 {
-    NotepadEditor[NotepadTabNumber] = new QTextEdit();
-    ui->tabWidget->addTab(NotepadEditor[NotepadTabNumber], NotepadTabName);
-    ui->tabWidget->setCurrentWidget(NotepadEditor[NotepadTabNumber]);
-    NotepadTabNumber++;
+    NotepadEditor = new QTextEdit(this);
+    connect(NotepadEditor, SIGNAL(textChanged()), this, SLOT(on_currentNotepadTextEditor_textChanged()));
+    ui->tabWidget->addTab(NotepadEditor, NotepadTabName);
+    ui->tabWidget->setCurrentWidget(NotepadEditor);
 }
 
 void MainWindow::createNewNotepadTab()
@@ -41,3 +41,18 @@ void MainWindow::destroyNotepadTab(int index)
         createNewNotepadTab();
     }
 }
+
+QTextEdit* MainWindow::selectCurrentNotepadTextEditor()
+{
+    QWidget* tempWidget = ui->tabWidget->widget(ui->tabWidget->currentIndex());
+    return (QTextEdit*)tempWidget;
+}
+
+void MainWindow::on_currentNotepadTextEditor_textChanged()
+{
+    if(!ui->tabWidget->tabText(ui->tabWidget->currentIndex()).contains("*"))
+    {
+        ui->tabWidget->setTabText(ui->tabWidget->currentIndex(),ui->tabWidget->tabText(ui->tabWidget->currentIndex())+"*");
+    }
+}
+

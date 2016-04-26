@@ -15,7 +15,8 @@ TEMPLATE = app
 SOURCES += src/main.cpp\
         src/mainWindow/mainwindow.cpp \
     src/helpDialog/helpdialog.cpp \
-    src/notepad/notepad.cpp
+    src/notepad/notepad.cpp \
+    src/notepad/filestream.cpp
 
 HEADERS  += src/mainWindow/mainwindow.h \
     src/helpDialog/helpdialog.h \

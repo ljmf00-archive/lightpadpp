@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);    
     createNewNotepadTab();
 }
 
@@ -29,43 +29,22 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::on_actionUndo_triggered()
 {
-    NotepadEditor[NotepadTabNumber]->undo();
+    selectCurrentNotepadTextEditor()->undo();
 }
 
 void MainWindow::on_actionRedo_triggered()
 {
-    NotepadEditor[NotepadTabNumber]->redo();
+    selectCurrentNotepadTextEditor()->redo();
 }
 
 void MainWindow::on_actionSelect_All_triggered()
 {
-    NotepadEditor[NotepadTabNumber]->selectAll();
+    selectCurrentNotepadTextEditor()->selectAll();
 }
 
 void MainWindow::on_actionOpen_File_triggered()
 {
-    if(OpenFilePath.isNull())
-    {
-        OpenFilePath = "/home/";
-    }
-    OpenFileName = QFileDialog::getOpenFileName(this, tr("Open File"),OpenFilePath,tr("All (*.*)"));
-    if(!OpenFilePath.isNull())
-    {
-        OpenFilePath = QFileInfo(OpenFileName).path();
-    }
-    QFile file(OpenFileName);
-    if(!file.open(QIODevice::ReadOnly)) {
-        QMessageBox::information(0, "Error", file.errorString());
-    }
-    else
-    {
-        createNotepadTab(QFileInfo(OpenFileName).fileName());
-    }
-    QTextEdit* tempEditor = NULL;
-    QWidget* tempWidget = ui->tabWidget->widget(ui->tabWidget->currentIndex());
-    tempEditor = (QTextEdit*)tempWidget;
-    tempEditor->setText(file.readAll());
-    file.close();
+    openFileToNotepadTab();
 }
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
@@ -76,4 +55,19 @@ void MainWindow::on_tabWidget_tabCloseRequested(int index)
 void MainWindow::on_actionNew_triggered()
 {
     createNewNotepadTab();
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+
+}
+
+void MainWindow::on_actionSave_As_triggered()
+{
+    saveFileFromNotepadTab();
+}
+
+void MainWindow::on_actionSave_All_triggered()
+{
+
 }
