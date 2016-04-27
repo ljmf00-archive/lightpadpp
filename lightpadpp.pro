@@ -16,11 +16,15 @@ SOURCES += src/main.cpp\
         src/mainWindow/mainwindow.cpp \
     src/helpDialog/helpdialog.cpp \
     src/notepad/notepad.cpp \
-    src/notepad/filestream.cpp
+    src/notepad/filestream.cpp \
+    src/notepad/signals.cpp
 
 HEADERS  += src/mainWindow/mainwindow.h \
     src/helpDialog/helpdialog.h \
-    src/config/directives.h
+    src/config/directives.h 
 
 FORMS    += src/mainWindow/mainwindow.ui \
     src/helpDialog/helpdialog.ui
+
+RESOURCES += \
+    assets/font/inconsolata.qrc

@@ -14,7 +14,7 @@ void MainWindow::openFileToNotepadTab()
         OpenFilePath = QFileInfo(OpenFileName).path();
     }
     OpenFileName = QFileDialog::getOpenFileName(this, tr("Open File"),OpenFilePath);
-    //if(OpenFileName.isNull())
+    if(OpenFileName.isNull()) return;
     QFile file(OpenFileName);
     if(!file.open(QIODevice::ReadOnly))
     {
@@ -36,7 +36,7 @@ void MainWindow::saveFileAsFromNotepadTab()
         SaveFilePath = App::DefaultPath;
     }
     SaveFileName = QFileDialog::getSaveFileName(this, tr("Save File"), SaveFilePath);
-    //if(SaveFileName.isNull())
+    if(SaveFileName.isNull()) return;
     QFile file(SaveFileName);
     if(!file.open(QIODevice::WriteOnly))
     {
@@ -48,4 +48,9 @@ void MainWindow::saveFileAsFromNotepadTab()
         stream << selectCurrentNotepadTextEditor()->toPlainText();
     }
     file.close();
+}
+
+void MainWindow::saveFileFromNotepadTab()
+{
+
 }

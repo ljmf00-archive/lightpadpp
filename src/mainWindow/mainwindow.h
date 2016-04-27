@@ -2,12 +2,18 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QObject>
 #include <QFileDialog>
 #include <QTabWidget>
 #include <QTextEdit>
 #include <QLabel>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QFont>
+#include <QFontDialog>
+#include <QFontDatabase>
+
+#include "../helpDialog/helpdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +24,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    Ui::MainWindow *ui;
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
@@ -33,18 +40,22 @@ private slots:
     void on_actionSave_triggered();
     void on_actionSave_As_triggered();
     void on_actionSave_All_triggered();
+    void on_MainWindow_destroyed();
+    void on_actionChange_Font_triggered();
     void on_currentNotepadTextEditor_textChanged();
-
+    
 private:
     void createNotepadTab(QString NotepadTabName);
     void createNewNotepadTab();
     void openFileToNotepadTab();
     void saveFileAsFromNotepadTab();
+    void saveFileFromNotepadTab();
+    void EditsaveStateNotepadText();
     void destroyNotepadTab(int index);
     QTextEdit* selectCurrentNotepadTextEditor();
-    int indexOfselectedCurrentNotepadTab();
+    HelpDialog h;
+    MainWindow* mw;
     int NewTabNumber = 0;
-    Ui::MainWindow *ui;
     QString OpenFileName;
     QString OpenFilePath;
     QString SaveFileName;

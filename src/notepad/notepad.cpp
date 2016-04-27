@@ -3,8 +3,10 @@
 
 void MainWindow::createNotepadTab(QString NotepadTabName)
 {
-    NotepadEditor = new QTextEdit(this);
-    connect(NotepadEditor, SIGNAL(textChanged()), this, SLOT(on_currentNotepadTextEditor_textChanged()));
+    QFont fontInconsolata(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/fonts/Inconsolata.pfa")).at(0), 12);
+    NotepadEditor = new QTextEdit();
+    NotepadEditor->setFont(fontInconsolata);
+    QObject::connect(NotepadEditor, SIGNAL(textChanged()), this, SLOT(on_currentNotepadTextEditor_textChanged()));
     ui->tabWidget->addTab(NotepadEditor, NotepadTabName);
     ui->tabWidget->setCurrentWidget(NotepadEditor);
 }
@@ -29,9 +31,9 @@ void MainWindow::destroyNotepadTab(int index)
     if(ui->tabWidget->tabText(index).contains("*"))
     {
         QMessageBox::StandardButton questionReply = QMessageBox::question(this, "Test", "Are you sure you want to quit without saving?", QMessageBox::No|QMessageBox::Yes);
-        if(questionReply == QMessageBox::Yes)
+        if(questionReply == QMessageBox::No)
         {
-
+            return;
         }
     }
     if(ui->tabWidget->tabText(index).contains("unnamed"))
@@ -56,11 +58,10 @@ QTextEdit* MainWindow::selectCurrentNotepadTextEditor()
     return (QTextEdit*)tempWidget;
 }
 
-void MainWindow::on_currentNotepadTextEditor_textChanged()
+void MainWindow::EditsaveStateNotepadText()
 {
     if(!ui->tabWidget->tabText(ui->tabWidget->currentIndex()).contains("*"))
     {
         ui->tabWidget->setTabText(ui->tabWidget->currentIndex(),ui->tabWidget->tabText(ui->tabWidget->currentIndex())+"*");
     }
 }
-
