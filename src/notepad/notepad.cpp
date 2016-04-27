@@ -26,6 +26,14 @@ void MainWindow::createNewNotepadTab()
 
 void MainWindow::destroyNotepadTab(int index)
 {
+    if(ui->tabWidget->tabText(index).contains("*"))
+    {
+        QMessageBox::StandardButton questionReply = QMessageBox::question(this, "Test", "Are you sure you want to quit without saving?", QMessageBox::No|QMessageBox::Yes);
+        if(questionReply == QMessageBox::Yes)
+        {
+
+        }
+    }
     if(ui->tabWidget->tabText(index).contains("unnamed"))
     {
         ui->tabWidget->removeTab(index);

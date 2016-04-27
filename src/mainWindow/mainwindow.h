@@ -39,7 +39,7 @@ private:
     void createNotepadTab(QString NotepadTabName);
     void createNewNotepadTab();
     void openFileToNotepadTab();
-    void saveFileFromNotepadTab();
+    void saveFileAsFromNotepadTab();
     void destroyNotepadTab(int index);
     QTextEdit* selectCurrentNotepadTextEditor();
     int indexOfselectedCurrentNotepadTab();

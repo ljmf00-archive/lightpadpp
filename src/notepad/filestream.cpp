@@ -29,7 +29,7 @@ void MainWindow::openFileToNotepadTab()
     file.close();
 }
 
-void MainWindow::saveFileFromNotepadTab()
+void MainWindow::saveFileAsFromNotepadTab()
 {
     if(SaveFilePath.isNull())
     {

@@ -64,7 +64,7 @@ void MainWindow::on_actionSave_triggered()
 
 void MainWindow::on_actionSave_As_triggered()
 {
-    saveFileFromNotepadTab();
+    saveFileAsFromNotepadTab();
 }
 
 void MainWindow::on_actionSave_All_triggered()
