@@ -12,6 +12,7 @@
 #include <QFont>
 #include <QFontDialog>
 #include <QFontDatabase>
+#include <QSyntaxHighlighter>
 
 #include "../helpDialog/helpdialog.h"
 
@@ -44,13 +45,15 @@ private slots:
     void on_actionChange_Font_triggered();
     void on_currentNotepadTextEditor_textChanged();
     
+    void on_actionSet_Default_triggered();
+
 private:
     void createNotepadTab(QString NotepadTabName);
     void createNewNotepadTab();
     void openFileToNotepadTab();
     void saveFileAsFromNotepadTab();
     void saveFileFromNotepadTab();
-    void EditsaveStateNotepadText();
+    void editSaveStateNotepadText();
     void destroyNotepadTab(int index);
     QTextEdit* selectCurrentNotepadTextEditor();
     HelpDialog h;
@@ -60,7 +63,6 @@ private:
     QString OpenFilePath;
     QString SaveFileName;
     QString SaveFilePath;
-    QTextEdit *NotepadEditor;
     QLabel *Status;
 };
 

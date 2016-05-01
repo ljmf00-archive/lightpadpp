@@ -1,6 +1,12 @@
-#include "../mainWindow/mainwindow.h"
+///Imported Headers
+//MainWindow
+#include "../../mainWindow/mainwindow.h"
+//Directives
+#include "../../config/directives.h"
+
+///GUI Headers
+//MainWindow
 #include "ui_mainwindow.h"
-#include "../config/directives.h"
 
 void MainWindow::openFileToNotepadTab()
 {
