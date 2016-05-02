@@ -15,7 +15,11 @@ Line:
   Column: 2F312B
 
 Syntax:
+  String: E6DB74
+  Number: AE81FF
+  Comments: 75715E
   Keywords: 66D9EF
+  ExtendedKeywords: 
   Definitions: A6E22E
-  
+  Operators: 
 ...
