@@ -8,12 +8,14 @@
 //MainWindow
 #include "ui_mainwindow.h"
 
+///Qt Headers
+#include <QDir>
+
 void MainWindow::openFileToNotepadTab()
 {
-
     if(OpenFilePath.isNull())
     {
-        OpenFilePath = App::DefaultPath;
+        OpenFilePath = QDir::homePath();
     }
     if(!OpenFilePath.isNull())
     {
@@ -39,7 +41,7 @@ void MainWindow::saveFileAsFromNotepadTab()
 {
     if(SaveFilePath.isNull())
     {
-        SaveFilePath = App::DefaultPath;
+        SaveFilePath = QDir::homePath();
     }
     SaveFileName = QFileDialog::getSaveFileName(this, tr("Save File"), SaveFilePath);
     if(SaveFileName.isNull()) return;

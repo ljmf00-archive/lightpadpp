@@ -1,7 +1,8 @@
 ///Impoted Headers
 //MainWindow
 #include "../../mainWindow/mainwindow.h"
-#include "../../syntax/syntax.h"
+#include "../syntax/syntax.h"
+#include "../styles/ceditor.h"
 
 ///GUI Headers
 //MainWindow
@@ -9,9 +10,8 @@
 
 void MainWindow::createNotepadTab(QString NotepadTabName)
 {
-    QFont fontInconsolata(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/fonts/Inconsolata.pfa")).at(0), 12);
-    QTextEdit *NotepadEditor = new QTextEdit();
-    NotepadEditor->setFont(fontInconsolata);
+    CodeEditor *NotepadEditor = new CodeEditor();
+    NotepadEditor->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     SyntaxHighlighter *highlighter = new SyntaxHighlighter(NotepadEditor->document());
     QObject::connect(NotepadEditor, SIGNAL(textChanged()), this, SLOT(on_currentNotepadTextEditor_textChanged()));
     ui->tabWidget->addTab(NotepadEditor, NotepadTabName);

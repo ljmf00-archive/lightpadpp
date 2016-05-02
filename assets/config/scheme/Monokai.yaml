@@ -1,0 +1,21 @@
+---
+Information:
+  Type: ColorScheme
+  Name: Monokai
+
+Window:
+  Background: 272822
+  Foreground: E8E8E3
+  Divider: 586E75
+
+Line:
+  Highlighter: 49483E
+  Selected: A6E22E
+  ColumnNumbers: 8F908A
+  Column: 2F312B
+
+Syntax:
+  Keywords: 66D9EF
+  Definitions: A6E22E
+  
+...

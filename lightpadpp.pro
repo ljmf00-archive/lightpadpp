@@ -22,17 +22,22 @@ SOURCES += src/main.cpp\
     src/notepad/methods/destroy.cpp \
     src/notepad/slots/edit.cpp \
     src/notepad/slots/file.cpp \
-    src/syntax/syntax.cpp \
-    src/syntax/highlightblock.cpp \
-    src/syntax/lang/c_cpp.cpp
+    src/notepad/syntax/syntax.cpp \
+    src/notepad/syntax/highlightblock.cpp \
+    src/notepad/syntax/lang/c_cpp.cpp \
+    src/notepad/styles/ceditor.cpp \
+    src/config/check.cpp \
+    src/config/files.cpp
 
 HEADERS  += src/mainWindow/mainwindow.h \
     src/helpDialog/helpdialog.h \
     src/config/directives.h \ 
-    src/syntax/syntax.h
+    src/notepad/syntax/syntax.h \
+    src/notepad/styles/ceditor.h \
+    src/config/check.h
 
 FORMS    += src/mainWindow/mainwindow.ui \
     src/helpDialog/helpdialog.ui
 
 RESOURCES += \
-    assets/font/inconsolata.qrc
+    assets/assets.qrc
