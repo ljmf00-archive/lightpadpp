@@ -6,7 +6,6 @@ Information:
 Window:
   Background: 272822
   Foreground: E8E8E3
-  Divider: 586E75
 
 Line:
   Highlighter: 49483E
@@ -14,12 +13,18 @@ Line:
   ColumnNumbers: 8F908A
   Column: 2F312B
 
-Syntax:
-  String: E6DB74
+Syntax: 
+  Character: E6DB74
+  Comment: 75715E
+  Argument: FD971F
+  Error: FF0000
+  ExtendedKeywords: F92672
+  BuiltinFunctions: 66D9EF
+  Keyword: 66D9EF
+  Method: A6E22E
   Number: AE81FF
-  Comments: 75715E
-  Keywords: 66D9EF
-  ExtendedKeywords: 
-  Definitions: A6E22E
-  Operators: 
+  Operator: F92672
+  String: E6DB74
+  URL: AE81FF
+  Warning: FFFF00
 ...

@@ -1,5 +1,6 @@
 ///Imported Headers
 #include "mainWindow/mainwindow.h"
+#include "config/check.h"
 
 ///Imported Libraries
 #include <QApplication>
@@ -9,6 +10,7 @@ int main(int argc, char *argv[])
 {
     //Create QApplication object and init construct
     QApplication a(argc, argv);
+    StartChecker* sc = new StartChecker();
     //Create MainWindow object
     MainWindow w;
     //Show MainWindow w object

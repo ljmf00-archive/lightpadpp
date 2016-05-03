@@ -41,3 +41,10 @@ FORMS    += src/mainWindow/mainwindow.ui \
 
 RESOURCES += \
     assets/assets.qrc
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/lib/bin/debug/release/ -llightpadlib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/lib/bin/debug/debug/ -llightpadlib
+else:unix: LIBS += -L$$PWD/lib/bin/debug/ -llightpadlib
+
+INCLUDEPATH += $$PWD/lib/bin/debug
+DEPENDPATH += $$PWD/lib/bin/debug

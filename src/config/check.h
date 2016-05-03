@@ -9,7 +9,7 @@ public:
     StartChecker();
 
 private:
-    void createFilefromSource(QFile file, QFile source);
+    void createFilefromSource(QFile* file, QFile* source);
 };
 
 #endif // STARTCHECKER_H

@@ -7,7 +7,7 @@ StartChecker::StartChecker()
     {
         QDir().mkdir("config");
         QDir().mkdir("config/scheme");
-//        createFilefromSource(QFile("config/scheme/Monokai.yaml"), QFile source);
+        createFilefromSource(new QFile("config/scheme/Monokai.yaml"), new QFile(":/config/scheme/Monokai.yaml"));
         QDir().mkdir("config/syntax");
         QDir().mkdir("config/themes");
     }
