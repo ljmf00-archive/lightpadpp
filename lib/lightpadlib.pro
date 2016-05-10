@@ -11,8 +11,7 @@ TEMPLATE = lib
 
 DEFINES += LIGHTPADLIB_LIBRARY
 
-SOURCES += lightpadlib.cpp \
-    src/core/lightpadlib.cpp \
+SOURCES += src/core/lightpadlib.cpp \
 
 HEADERS +=\
         lightpadlib_global.h \
