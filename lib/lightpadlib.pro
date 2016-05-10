@@ -11,10 +11,13 @@ TEMPLATE = lib
 
 DEFINES += LIGHTPADLIB_LIBRARY
 
-SOURCES += lightpadlib.cpp
+SOURCES += lightpadlib.cpp \
+    src/core/lightpadlib.cpp \
 
-HEADERS += lightpadlib.h\
-        lightpadlib_global.h
+HEADERS +=\
+        lightpadlib_global.h \
+    src/core/lightpadlib.h \
+    src/core/lightpadlib_global.h \
 
 unix {
     target.path = /usr/lib
