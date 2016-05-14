@@ -13,11 +13,7 @@ $ cd lightpadqq
 ![Screenshot1](screenshot.png?raw=true "Optional Title")
 
 ### Installation
-```
-$ ./configure --prefix /usr
-$ make
-# make install
-```
+- Comming Soon!
 
 ### Contributors
  - **Luís Ferreira** - General Developer
