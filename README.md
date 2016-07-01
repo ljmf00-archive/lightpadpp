@@ -10,7 +10,7 @@ $ cd lightpadqq
 ```
 
 ### Screenshots
-![Screenshot1](screenshot.png?raw=true "Optional Title")
+![Screenshot1](screenshot.png?raw=true "Lightpad++ Preview")
 
 ### Installation
 - Comming Soon!
